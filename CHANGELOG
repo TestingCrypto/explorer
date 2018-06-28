@@ -1,3 +1,15 @@
+1.6.2
+* added youtube link to layout
+* added node map to network view
+* fixed rounding on total supply
+* added peersv2.js script to grab peers from remote nodes
+* added global network hashrate and difficulty under new menu "Stats"
+* added numeral formatting to total supply
+* added changelog section
+* added block find time ( every 500 blocks ) chart to Stats Page
+* added support for moving average trendlines
+* fixed tooltip issue and made charts resizable
+
 1.6.1
 * fixed last_txs setting
 * added hashrate_units setting
