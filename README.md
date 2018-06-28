@@ -25,7 +25,7 @@ Create user with read/write access:
 
 *note: If you're using mongo shell 2.4.x, use the following to create your user:
 
-    > db.addUser( { user: "username", pwd: "password", roles: [ "readWrite"] })
+    > db.addUser( { user: "username", pwd: "password", roles: [ "readWrite" ] } )
 
 ### Get the source
 
