@@ -37,7 +37,7 @@ Create user with read/write access:
 
 ### Configure
 
-    cp ./settings.json.template ./settings.json
+    sudo cp ./settings.json.template ./settings.json
 
 *Make required changes in settings.json*
 
