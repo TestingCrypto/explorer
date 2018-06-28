@@ -1,0 +1,119 @@
+extends layout
+
+block content
+  script.
+   $(document).ready(function(){
+     var test = $.jqplot('lineChart', [hashData],
+        {
+          title: "Global Network Hash Speed",
+          seriesColors:['#fff380'],
+          axesDefaults: {
+             labelRenderer: $.jqplot.CanvasAxisLabelRenderer
+          },
+          seriesDefaults: {
+            showMarker: false,
+            fill: true,
+            fillAndStroke: true,
+            rendererOptions: {
+              highlightMouseOver: true,
+              highlightMouseDown: false,
+              highlightColor: 'black',
+            },
+            markerOptions: {
+              size: 7,
+              color: 'green',
+              shadow: false
+            }
+          },
+          legend: {
+            show: false
+          },
+          axes: {
+           xaxis: {
+             label: "Block Nr.",
+             pad: 0,
+             tickOptions: {
+                    showGridline: false,
+                    tickInterval: 100
+             }
+           },
+           yaxis: {
+             label: "Hash speed (H/s)",
+             min: 0,
+             max: 400000
+           }
+          },
+          highlighter: {
+            show: true,
+            sizeAdjust: 7.5
+          },
+          cursor: {
+            show: true
+          },
+          grid: {
+            drawBorder: false,
+            shadow: false,
+            background: 'rgba(0,0,0,0)'  //works to make transparent.
+          }
+        });
+     var test2 = $.jqplot('lineChart2', [diffData],
+        {
+          title: "Global Network Difficulty",
+          seriesColors:['orange'],
+          axesDefaults: {
+             labelRenderer: $.jqplot.CanvasAxisLabelRenderer
+          },
+          seriesDefaults: {
+            showMarker: false,
+            fill: false,
+            fillAndStroke: true,
+            rendererOptions: {
+              highlightMouseOver: true,
+              highlightMouseDown: false,
+              highlightColor: 'black',
+            },
+            markerOptions: {
+              size: 7,
+              color: 'green',
+              shadow: false
+            }
+          },
+          legend: {
+            show: false
+          },
+          axes: {
+           xaxis: {
+             label: "Block Nr.",
+             pad: 0,
+             tickOptions: {
+                    showGridline: false,
+                    tickInterval: 100
+             }
+           },
+           yaxis: {
+             label: "Difficulty",
+             min: 0,
+           }
+          },
+          highlighter: {
+            show: true,
+            sizeAdjust: 7.5
+          },
+          cursor: {
+            show: true
+          },
+          grid: {
+            drawBorder: false,
+            shadow: false,
+            background: 'rgba(0,0,0,0)'  //works to make transparent.
+          }
+        });
+        $(window).resize(function() {
+          test.replot( { resetAxes: true } );
+          test2.replot( { resetAxes: true } );
+        });
+     });
+  .col-xs-12.col-md-10.col-md-offset-1(style="margin-bottom: 5%")  
+    center
+      div#lineChart(style="width:75%;height:305px;margin:0px;")
+div#lineChart2(style="width:75%;height:305px;margin:0px;")
