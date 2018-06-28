@@ -33,7 +33,7 @@ Create user with read/write access:
 
 ### Install node modules
 
-    cd explorer && npm install --production
+    cd explorer && sudo npm install --production
 
 ### Configure
 
