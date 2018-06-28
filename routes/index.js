@@ -194,6 +194,14 @@ router.get('/network', function(req, res) {
   res.render('network', {active: 'network'});
 });
 
+router.get('/hash', function(req, res) {
+  res.render('hash', {active: 'hash'});
+});
+
+router.get('/changelog', function(req, res) {
+  res.render('changelog', {active: 'changelog'});
+});
+
 router.get('/reward', function(req, res){
   //db.get_stats(settings.coin, function (stats) {
     console.log(stats);
