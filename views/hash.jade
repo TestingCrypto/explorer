@@ -3,16 +3,17 @@ extends layout
 block content
   script.
    $(document).ready(function(){
+     //var line = hashData.average_intra_t(); 
      var test = $.jqplot('lineChart', [hashData],
         {
           title: "Global Network Hash Speed",
-          seriesColors:['#fff380'],
+          seriesColors:['#fff380','red'],
           axesDefaults: {
              labelRenderer: $.jqplot.CanvasAxisLabelRenderer
           },
+          series: [{fill: true},{ fill: false , lineWidth: 2}],
           seriesDefaults: {
             showMarker: false,
-            fill: true,
             fillAndStroke: true,
             rendererOptions: {
               highlightMouseOver: true,
@@ -45,7 +46,10 @@ block content
           },
           highlighter: {
             show: true,
-            sizeAdjust: 7.5
+            sizeAdjust: 7.5,
+            tooltipLocation:'n',
+            tooltipFormatString: '<b><i><span style="color:black; background-color:white">%d</span></b>',
+            useAxesFormatters: false
           },
           cursor: {
             show: true
@@ -97,7 +101,64 @@ block content
           },
           highlighter: {
             show: true,
-            sizeAdjust: 7.5
+            sizeAdjust: 7.5,
+            tooltipLocation:'n',
+            tooltipAxes: 'y',
+            tooltipFormatString: '<b><i><span style="color:black; background-color:white">%.8f</span></b>',
+            useAxesFormatters: false
+          },
+          cursor: {
+            show: true
+          },
+          grid: {
+            drawBorder: false,
+            shadow: false,
+            background: 'rgba(0,0,0,0)'  //works to make transparent.
+          }
+        });
+     var test3 = $.jqplot('barChart', [timeData],
+        {
+          title: "Time to find 500 blocks in seconds",
+          seriesColors:['yellow'],
+          axesDefaults: {
+             labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
+          },
+          seriesDefaults: {
+            renderer:$.jqplot.BarRenderer,
+            showMarker: false,
+            fill: false,
+            fillAndStroke: true,
+            rendererOptions: {
+              barWidth:10,
+              highlightMouseOver: true,
+              highlightMouseDown: false,
+              highlightColor: 'black',
+            },
+          },
+          legend: {
+            show: false
+          },
+          axes: {
+           xaxis: {
+             label: "Block Nr.",
+             pad: 0,
+             tickOptions: {
+                    showGridline: false,
+                    tickInterval: 1
+             }
+           },
+           yaxis: {
+             label: "500-BlockFindTime(s)",
+             min: 0,
+           }
+          },
+          highlighter: {
+            show: true,
+            sizeAdjust: 7.5,
+            tooltipLocation:'n',
+            tooltipAxes: 'y',
+            tooltipFormatString: '<b><i><span style="color:black; background-color:white">%d</span></b>',
+            useAxesFormatters: false
           },
           cursor: {
             show: true
@@ -111,9 +172,11 @@ block content
         $(window).resize(function() {
           test.replot( { resetAxes: true } );
           test2.replot( { resetAxes: true } );
+          test3.replot( { resetAxes: true } );
         });
      });
   .col-xs-12.col-md-10.col-md-offset-1(style="margin-bottom: 5%")  
     center
       div#lineChart(style="width:75%;height:305px;margin:0px;")
-div#lineChart2(style="width:75%;height:305px;margin:0px;")
+      div#lineChart2(style="width:75%;height:305px;margin:0px;")
+div#barChart(style="width:75%;height:305px;margin:0px;")
