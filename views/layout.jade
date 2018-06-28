@@ -16,23 +16,32 @@ html
     script(src='/vendor/jqplot/plugins/jqplot.pieRenderer.min.js')
     script(src='/vendor/jqplot/plugins/jqplot.barRenderer.min.js')
     script(src='/vendor/jqplot/plugins/jqplot.categoryAxisRenderer.min.js')
+    script(src='/vendor/jqplot/plugins/jqplot.canvasAxisLabelRenderer.min.js')
+    script(src='/vendor/jqplot/plugins/jqplot.canvasTextRenderer.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js')
+    script(src='/javascripts/jquery-jvectormap-2.0.3.min.js')
+    script(src='/javascripts/jquery-jvectormap-world-mill.js')
+    script(src='/javascripts/mapdata.js')
+    script(src='/javascripts/hashdata.js')
+    script(src='/javascripts/diffdata.js')
     script(src='//cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js')  
     script(src='//cdn.datatables.net/responsive/1.0.1/js/dataTables.responsive.js')
     script(src='//cdn.datatables.net/plug-ins/725b2a2115b/integration/bootstrap/3/dataTables.bootstrap.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js')
     script(src='/javascripts/chart.js')
     script.
       $(document).ready(function(){
         $('##{active}').addClass('active');
         function update_stats(){   
           $.ajax({url: '/ext/summary', success: function(json){
-            $("#supply").text(json.data[0].supply);
+            $("#supply").text(numeral(json.data[0].supply.toFixed()).format(0,0));
             $("#difficulty").text(json.data[0].difficulty);
             $("#difficultyHybrid").text(json.data[0].difficultyHybrid);
             $("#hashrate").text(json.data[0].hashrate);
             $("#lastPrice").text(json.data[0].lastPrice.toFixed(8));
             $("#lblConnections").text(json.data[0].connections + ' connections');
             $("#lblBlockcount").text(json.data[0].blockcount + ' blocks');
+            $("#lblVersion").text('v1.6.2');
             $("#lblX1").text(' ');
           }});
         }
@@ -125,6 +134,14 @@ html
                 a.navbar-link(href='/info')
                   span.glyphicon.glyphicon-info-sign
                   span.menu-text #{settings.locale.menu_api}
+            li#hash
+              a.navbar-link(href='/hash')
+                  span.glyphicon.glyphicon-stats
+                  span.menu-text Stats
+            li#changelog
+               a.navbar-link(href='/changelog')
+                  span.glyphicon.glyphicon-bell
+                  span.menu-text Changelog
     .col-md-12
       .row.text-center
         .col-md-2.col-md-offset-1
@@ -208,6 +225,11 @@ html
             li.pull-left
               a#googleplus-icon(href="https://plus.google.com/#{settings.googleplus}", target='_blank')
                 span.glyphicon.fa.fa-google-plus
+        if settings.display.youtube
+          ul.nav.navbar-nav
+            li.pull-left
+              a#youtube-icon(href="https://www.youtube.com/channel/#{settings.youtube}", target='_blank')
+                span.glyphicon.fa.fa-youtube
       .col-md-4
         ul.nav
           li.text-center(style='margin-left:80px;margin-right:80px;')
@@ -216,6 +238,6 @@ html
       span.connections
         label#lblBlockcount.label.label-default -
         label#lblConnections.label.label-default -
+        label#lblVersion.label.label-default -
 
 
-              
