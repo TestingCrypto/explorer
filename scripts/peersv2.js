@@ -48,14 +48,14 @@ function grabPeers( vRPCClient, err) {
 
         //console.log('checking peer %s',address);
         db.find_peer(address, function(peer) {
-          if (peer) {
+          if (peer && res.result[i].version > 200000) {
             // peer already exists
-            //console.log('Peer %s already exist', address);
+            console.log('Checking peer, %s %s %s', address, res.result[i].version, res.result[i].subver.replace('/', '').replace('/', ''));
             loop.next();
           } else {
             request({uri: 'http://freegeoip.net/json/' + address, json: true}, function (error, response, geo) {
             console.log('Detected peer, %s %s %s %s %s', address, res.result[i].version, res.result[i].subver.replace('/', '').replace('/', '') , geo.country_name, geo.country_code); 
-            db.create_peer({
+              db.create_peer({
                 address: address,
                 protocol: res.result[i].version,
                 version: res.result[i].subver.replace('/', '').replace('/', ''),
