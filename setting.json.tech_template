@@ -120,7 +120,7 @@
   "googleplus": "TechC01n",
 
   //genesis
-  "genesis_tx": "9d60d998077a079c10b1266278ffec5f165f264e1f62c0f7eb5e22aa99fc1a8e",
+  "genesis_tx": "22fba43bfa9301d6ff211effd9b2003e7574f28552ce6c6b1fdabbe46edb1bec",
   "genesis_block": "000004e2fd6e13eec6d7818c308cb3e9a7ad2b708eb263cf685dfe6c45a160d2",
 
   //heavy (enable/disable additional heavy features)
