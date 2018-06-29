@@ -1,0 +1,170 @@
+/*
+  This file must be valid JSON. But comments are allowed
+
+  Please edit settings.json, not settings.json.template
+*/
+{
+  // name your instance!
+  "title": "TECH Explorer",
+
+  "address": "50.83.11.14:3002",
+
+  // coin name
+  "coin": "Techcoin",
+
+  // coin symbol
+  "symbol": "TECH",
+
+  // logo
+  "logo": "/images/logo.png",
+
+  // favicon
+  "favicon": "public/favicon.ico",
+
+  // Uses bootswatch themes (http://bootswatch.com/)
+  // Valid options:
+  //     Cerulean, Cosmo, Cyborg, Darkly, Flatly, Journal, Lumen, Paper,
+  //     Readable, Sandstone, Simplex, Slate, Spacelab, Superhero, United, Yeti
+  // theme (see /public/themes for available themes)
+  "theme": "materia",
+
+  // port to listen for requests on.
+  "port" : 3002,
+
+  // database settings (MongoDB)
+  "dbsettings": {
+    "user": "iquidus",
+    "password": "*****",
+    "database": "*****",
+    "address": "localhost",
+    "port": 27018
+  },
+
+  //update script settings
+  "update_timeout": 10,
+  "check_timeout": 250,
+
+  // wallet settings
+  "wallet": {
+    "host": "localhost",
+    "port": 57698,
+    "user": "**********",
+    "pass": "**********"
+  },
+
+  // confirmations
+  "confirmations": 15,
+
+  // language settings
+  "locale": "locale/en.json",
+
+  // menu settings
+  "display": {
+    "api": true,
+    "markets": true,
+    "richlist": true,
+    "twitter": true,
+    "facebook": true,
+    "googleplus": false,
+    "search": true,
+    "movement": true,
+    "network": true
+  },
+
+  // index page (valid options for difficulty are POW, POS or Hybrid)
+  "index": {
+    "show_hashrate": true,
+    "difficulty": "POS",
+    "last_txs": 100
+  },
+
+  // ensure links on API page are valid
+  "api": {
+    "blockindex": 240085,
+    "blockhash": "7d70672f56e58fce1e57e0f6181911bb952506c875b42295c407085aa618195a",
+    "txhash": "db35cdf4a9b8928f4ab988c83a79392b6413829bf6f372ac68e8b06c13ec518e",
+    "address": "TYUtR4wtHQgyNr9tH1KrusvNsXEM7TxUUa"
+  },
+
+  // market settings
+  //supported markets: bittrex, poloniex, yobit, empoex, bleutrade, cryptopia, ccex
+  //default market is loaded by default and determines last price in header
+  "markets": {
+    "coin": "TECH",
+    "exchange": "BTC",
+    "enabled": ["yobit"],
+    "cryptopia_id": "1658",
+    "ccex_key" : "Get-Your-Own-Key",
+    "default": "yobit"
+  },
+
+  // richlist/top100 settings
+  "richlist": {
+    "distribution": true,
+    "received": true,
+    "balance": true
+  },
+  // movement page settings
+  // min amount: show transactions greater than this value
+  // low flag: greater than this value flagged yellow
+  // high flag: greater than this value flagged red
+  "movement": {
+    "min_amount": 1,
+    "low_flag": 10,
+    "high_flag": 100
+  },
+
+  // twitter, facebook, googleplus
+  "twitter": "TechcoinGroup",
+  "facebook": "TechC01n",
+  "googleplus": "TechC01n",
+
+  //genesis
+  "genesis_tx": "9d60d998077a079c10b1266278ffec5f165f264e1f62c0f7eb5e22aa99fc1a8e",
+  "genesis_block": "000004e2fd6e13eec6d7818c308cb3e9a7ad2b708eb263cf685dfe6c45a160d2",
+
+  //heavy (enable/disable additional heavy features)
+  "heavy": true,
+
+  //amount of txs to index per address (stores latest n txs)
+  "txcount": 100,
+
+  //show total sent & received on address page (set false if PoS)
+  "show_sent_received": false,
+
+  // how to calculate current coin supply
+  // COINBASE : total sent from coinbase (PoW)
+  // GETINFO : retreive from getinfo api call (PoS)
+  // HEAVY: retreive from heavys getsupply api call
+  // BALANCES : total of all address balances
+  // TXOUTSET : retreive from gettxoutsetinfo api call
+  "supply": "BALANCES",
+
+  // how to acquire network hashrate
+  // getnetworkhashps: uses getnetworkhashps api call, returns in GH/s
+  // netmhashps: uses getmininginfo.netmhashpsm returns in MH/s
+  "nethash": "getnetworkhashps",
+
+  // nethash unitd: sets nethash API return units
+  // valid options: "P" (PH/s), "T" (TH/s), "G" (GH/s), "M" (MH/s), "K" (KH/s)
+  "nethash_units": "K",
+
+  // Address labels
+  // example : "TYZBys3VmagPGvyrDftX2fFVWU4A4UHEHd": {"label": "Burn address", "type":"danger", "url":"http://404.com"}
+  // label (required) = test to display
+  // type (optional) = class of label, valid types: default, primary, warning, danger, success
+  // url (optional) = url to link to for more information
+  "labels": {
+    "TYUtR4wtHQgyNr9tH1KrusvNsXEM7TxUUa": {"label": "Community Donation address", "type":"primary", "url":"http://50.83.11.14:3002"},
+  // "TMJMFGe2iqJCgDbrJeXdxKgxbEt1HptxKU": {"label": "BITTREX"},
+  // "TEzAN7u7aSQGPDw1DC985Dmwggi9SSys94": {"label": "BITTREX"},
+  // "TTZmH5B4riiwEWFkSah8EQ4xMhUJTcsCpE": {"label": "BITTREX"},
+  // "TCR55FvMYpGpuasxX4owGFEPa28YvhCSHv": {"label": "YoBit"},
+  // "TMWafR28aru2yJirUBvmJ4759QESMUoY6D": {"label": "YoBit"},
+  // "TViKNaWncBWjVnZLXd9F3pbthWwmfnRyzZ": {"label": "YoBit"},
+  // "TVmyqhbLuUtEW5a4ZG4t4Wv7Kytp1jaH6Y": {"label": "YoBit"},
+  // "TEvDoGnVxyQRsAZabUCtiENrq7WHzTY7p9": {"label": "YoBit"},
+  // "TSrK5q9QwqHSR73vtt3yod6P9kfUxgW5dM": {"label": "YoBit"},
+  // "TF5hGT5Wthrfbq1yaPNtwVhTkMWDfQfkgK": {"label": "BITTREX"}
+  }
+}
