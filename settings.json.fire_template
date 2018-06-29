@@ -1,0 +1,170 @@
+/*
+  This file must be valid JSON. But comments are allowed
+
+  Please edit settings.json, not settings.json.template
+*/
+{
+  // name your instance!
+  "title": "FIRE Explorer",
+
+  "address": "50.83.11.14:3001",
+
+  // coin name
+  "coin": "Firecoin",
+
+  // coin symbol
+  "symbol": "FIRE",
+
+  // logo
+  "logo": "/images/logo.png",
+
+  // favicon
+  "favicon": "public/favicon.ico",
+
+  // Uses bootswatch themes (http://bootswatch.com/)
+  // Valid options:
+  //     Cerulean, Cosmo, Cyborg, Darkly, Flatly, Journal, Lumen, Paper,
+  //     Readable, Sandstone, Simplex, Slate, Spacelab, Superhero, United, Yeti
+  // theme (see /public/themes for available themes)
+  "theme": "United",
+
+  // port to listen for requests on.
+  "port" : 3001,
+
+  // database settings (MongoDB)
+  "dbsettings": {
+    "user": "TestingCrypto",
+    "password": "*****",
+    "database": "*****",
+    "address": "localhost",
+    "port": 27017
+  },
+
+  //update script settings
+  "update_timeout": 10,
+  "check_timeout": 250,
+
+  // wallet settings
+  "wallet": {
+    "host": "localhost",
+    "port": 47698,
+    "user": "**********",
+    "pass": "**********"
+  },
+
+  // confirmations
+  "confirmations": 15,
+
+  // language settings
+  "locale": "locale/en.json",
+
+  // menu settings
+  "display": {
+    "api": true,
+    "markets": true,
+    "richlist": true,
+    "twitter": true,
+    "facebook": false,
+    "googleplus": false,
+    "search": true,
+    "movement": true,
+    "network": true
+  },
+
+  // index page (valid options for difficulty are POW, POS or Hybrid)
+  "index": {
+    "show_hashrate": true,
+    "difficulty": "POS",
+    "last_txs": 100
+  },
+
+  // ensure links on API page are valid
+  "api": {
+    "blockindex": 184250,
+    "blockhash": "f246cbbae7bb6a0cc0bf2c65f69db886f44bce6f9d28f1c094fba7a2ae5886fe",
+    "txhash": "6593a192fd84fb28fb80e3b502664285f155a36f6dde873d8fd05e1c44e29382",
+    "address": "FJhdEYYQzwYm5DwttdG1XUZs5pVjmeGzzW"
+  },
+
+  // market settings
+  //supported markets: bittrex, poloniex, yobit, empoex, bleutrade, cryptopia, ccex
+  //default market is loaded by default and determines last price in header
+  "markets": {
+    "coin": "FIRE",
+    "exchange": "BTC",
+    "enabled": ["yobit"],
+    "cryptopia_id": "1658",
+    "ccex_key" : "Get-Your-Own-Key",
+    "default": "yobit"
+  },
+
+  // richlist/top100 settings
+  "richlist": {
+    "distribution": true,
+    "received": true,
+    "balance": true
+  },
+  // movement page settings
+  // min amount: show transactions greater than this value
+  // low flag: greater than this value flagged yellow
+  // high flag: greater than this value flagged red
+  "movement": {
+    "min_amount": 1,
+    "low_flag": 10,
+    "high_flag": 100
+  },
+
+  // twitter, facebook, googleplus
+  "twitter": "FirecoinX15",
+  "facebook": "yourfacebookpage",
+  "googleplus": "yourgooglepluspage",
+
+  //genesis
+  "genesis_tx": "c1979ae84522f97066791b8c8d15bd048cc0b3c9bf9ae08ba03b3745377fc213",
+  "genesis_block": "00000e3e8bac8bacace2fbd0f9d8f905ca9dcf2f541cfefcae358351b1ccaba1",
+
+  //heavy (enable/disable additional heavy features)
+  "heavy": true,
+
+  //amount of txs to index per address (stores latest n txs)
+  "txcount": 100,
+
+  //show total sent & received on address page (set false if PoS)
+  "show_sent_received": false,
+
+  // how to calculate current coin supply
+  // COINBASE : total sent from coinbase (PoW)
+  // GETINFO : retreive from getinfo api call (PoS)
+  // HEAVY: retreive from heavys getsupply api call
+  // BALANCES : total of all address balances
+  // TXOUTSET : retreive from gettxoutsetinfo api call
+  "supply": "BALANCES",
+
+  // how to acquire network hashrate
+  // getnetworkhashps: uses getnetworkhashps api call, returns in GH/s
+  // netmhashps: uses getmininginfo.netmhashpsm returns in MH/s
+  "nethash": "getnetworkhashps",
+
+  // nethash unitd: sets nethash API return units
+  // valid options: "P" (PH/s), "T" (TH/s), "G" (GH/s), "M" (MH/s), "K" (KH/s)
+  "nethash_units": "K",
+
+  // Address labels
+  // example : "F8pzq2eDheK85pBwyreqiDe7cuFH4rsGLo": {"label": "Burn address", "type":"danger", "url":"http://404.com"}
+  // label (required) = test to display
+  // type (optional) = class of label, valid types: default, primary, warning, danger, success
+  // url (optional) = url to link to for more information
+  "labels": {
+    "FJhdEYYQzwYm5DwttdG1XUZs5pVjmeGzzW": {"label": "Community Donation address", "type":"primary", "url":"http://50.83.11.14:3001"},
+    "F8pzq2eDheK85pBwyreqiDe7cuFH4rsGLo": {"label": "18th Nov 2014 12:22:48"},
+    "F651UDZb7rKyJFFRcidtHSfmtxxpAbLUSN": {"label": "18th Nov 2014 14:14:45"},
+    "FHLKQVfVhJeVE4aKPSzxj5pvvwTxcEfrGJ": {"label": "18th Nov 2014 14:14:45"},
+    "FGdaaQqU52EZ3Vs8JWe9cVTikvU6Grue8s": {"label": "20th Feb 2015 11:29:01"},
+    "F5w8wFCjrEfSMhZxntt3tDrfj91KE28ZUZ": {"label": "18th Nov 2014 14:32:47"},
+    "F9kur5AnVEHR9j3SADPMvA8NcGgvXCi6uX": {"label": "Movement"},
+    "FUjEmg3A2D8DRWztHbQYzuua8pBUx4rX5h": {"label": "18th Nov 2014 14:32:47"},
+    "F6F5K93mzf6m91MjzBVo6DJNYmMgkccQPj": {"label": "3rd Dec 2014 14:49:08"},
+    "FTDnueM6THmtkn14sA69sas8viPdizWBkh": {"label": "Movement"},
+    "FAhZw9SXHji3Q5bskUaTV122kSHbNznF4N": {"label": "19th Nov 2014 04:34:40"}
+  }
+}
