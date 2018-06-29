@@ -17,15 +17,11 @@ Enter MongoDB cli:
 
 Create databse:
 
-    > use explorerdb
+    > use coin_explorerdb
 
 Create user with read/write access:
 
-    > db.createUser( { user: "iquidus", pwd: "3xp!0reR", roles: [ "readWrite" ] } )
-
-*note: If you're using mongo shell 2.4.x, use the following to create your user:
-
-    > db.addUser( { user: "username", pwd: "password", roles: [ "readWrite" ] } )
+    > db.createUser( { user: "coin_name", pwd: "pass_word", roles: [ "readWrite" ] } )
 
 ### Get the source
 
@@ -33,7 +29,7 @@ Create user with read/write access:
 
 ### Install node modules
 
-    cd explorer && sudo npm install --production
+    cd coin_explorer && sudo npm install --production
 
 ### Configure
 
@@ -43,7 +39,8 @@ Create user with read/write access:
 
 ### Start Explorer
 
-    npm start
+    cd coin_explorer
+    sudo npm start
 
 *note: mongod must be running to start the explorer*
 
@@ -53,9 +50,20 @@ As of version 1.4.0 the explorer defaults to cluster mode, forking an instance o
 
 To stop the cluster you can use
 
-    npm stop
+    Ctrl C
+    sudo npm stop
 
 ### Syncing databases with the blockchain
+
+    cd coin_explorer
+    
+    sudo node scripts/sync.js index update
+    sudo node scripts/sync.js index check
+    sudo node scripts/sync.js index reindex    
+    sudo node scripts/peers.js index update
+    sudo node scripts/peers.js index check
+    sudo node scripts/peers.js index reindex
+    sudo node scripts/sync.js market reindex
 
 sync.js (located in scripts/) is used for updating the local databases. This script must be called from the explorers root directory.
 
@@ -83,10 +91,12 @@ sync.js (located in scripts/) is used for updating the local databases. This scr
 
 *Example crontab; update index every minute and market data every 2 minutes*
 
-*/1 * * * * cd /path/to/explorer && /usr/bin/nodejs scripts/sync.js index update > /dev/null 2>&1
-*/2 * * * * cd /path/to/explorer && /usr/bin/nodejs scripts/sync.js market > /dev/null 2>&1
-*/5 * * * * cd /path/to/explorer && /usr/bin/nodejs scripts/peers.js > /dev/null 2>&1
-*/30 * * * * cd /path/to/explorer && /usr/bin/nodejs scripts/mapgetdata.js > /dev/null 2>&1
+*/2 * * * * cd coin_explorer && /usr/bin/nodejs scripts/sync.js index update > /dev/null 2>&1
+*/5 * * * * cd coin_explorer && /usr/bin/nodejs scripts/sync.js market > /dev/null 2>&1
+*/10 * * * * cd coin_explorer && /usr/bin/nodejs scripts/peers.js > /dev/null 2>&1
+*/30 * * * * cd coin_explorer && /usr/bin/nodejs scripts/mapgetdata.js > /dev/null 2>&1
+@reboot sleep 15; sudo coind -daemon -txindex
+@reboot sleep 60; cd coin_explorer && sudo npm start
 
 ### Wallet
 
