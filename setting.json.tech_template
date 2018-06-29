@@ -37,7 +37,7 @@
     "password": "*****",
     "database": "*****",
     "address": "localhost",
-    "port": 27018
+    "port": 27017
   },
 
   //update script settings
