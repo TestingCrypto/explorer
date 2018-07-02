@@ -7,7 +7,7 @@ An open source block explorer written in node.js.
 
 *  node.js >= 0.10.28
 *  mongodb 2.6.x
-*  *coind
+*  *coind (full sync)
 
 ### Create database
 
@@ -37,7 +37,7 @@ Create user with read/write access:
 
 *Make required changes in settings.json*
 
-### Start Explorer
+### Start Explorer //only with full syncd
 
     cd coin_explorer
     sudo npm start
