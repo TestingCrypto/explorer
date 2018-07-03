@@ -1,0 +1,5 @@
+*/5 * * * * cd coin_explorer && /usr/bin/nodejs scripts/sync.js index update > /dev/null 2>&1
+*/10 * * * * cd coin_explorer && /usr/bin/nodejs scripts/sync.js market > /dev/null 2>&1
+*/30 * * * * cd coin_explorer && /usr/bin/nodejs scripts/peers.js > /dev/null 2>&1
+@reboot sleep 10; sudo coin-qt -daemon -txindex
+@reboot sleep 600; cd coin_explorer && npm start
