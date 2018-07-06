@@ -1,0 +1,162 @@
+/*
+  This file must be valid JSON. But comments are allowed
+
+  Please edit settings.json, not settings.json.template
+*/
+{
+  // name your instance!
+  "title": "GoldCoin Explorer",
+
+  "address": "127.0.0.1:3001",
+
+  // coin name
+  "coin": "GoldCoin",
+
+  // coin symbol
+  "symbol": "GLD",
+
+  // logo
+  "logo": "/images/logo.png",
+
+  // favicon
+  "favicon": "public/favicon.ico",
+
+  // Uses bootswatch themes (http://bootswatch.com/)
+  // Valid options:
+  //     Cerulean, Cosmo, Cyborg, Darkly, Flatly, Journal, Lumen, Paper,
+  //     Readable, Sandstone, Simplex, Slate, Spacelab, Superhero, United, Yeti
+  // theme (see /public/themes for available themes)
+  "theme": "Readable",
+
+  // port to listen for requests on.
+  "port" : 3001,
+
+  // database settings (MongoDB)
+  "dbsettings": {
+    "user": "**********",
+    "password": "**********",
+    "database": "goldcoin_explorerdb",
+    "address": "localhost",
+    "port": 27017
+  },
+
+  //update script settings
+  "update_timeout": 10,
+  "check_timeout": 250,
+
+  // wallet settings
+  "wallet": {
+    "host": "localhost",
+    "port": 8121,
+    "user": "**********",
+    "pass": "**********"
+  },
+
+  // confirmations
+  "confirmations": 120,
+
+  // language settings
+  "locale": "locale/en.json",
+
+  // menu settings
+  "display": {
+    "api": true,
+    "markets": true,
+    "richlist": true,
+    "twitter": true,
+    "facebook": true,
+    "googleplus": false,
+    "search": true,
+    "movement": true,
+    "network": true
+  },
+
+  // index page (valid options for difficulty are POW, POS or Hybrid)
+  "index": {
+    "show_hashrate": true,
+    "difficulty": "POW",
+    "last_txs": 100
+  },
+
+  // ensure links on API page are valid
+  "api": {
+    "blockindex": 1,
+    "blockhash": "e39be079a4e57af79f63edb2726bdcb401ae520fa5b5328bbeab185b5b3d636e",
+    "txhash": "249851653fa3a0c4e1bf5e38febfd469a5dc54c68350a591fde44c66f03c2742",
+    "address": "DtMxHLAYMR1y1fZP4kQt4yxJPwJ1hgFpZa"
+  },
+
+  // market settings
+  //supported markets: bittrex, poloniex, yobit, empoex, bleutrade, cryptopia, ccex
+  //default market is loaded by default and determines last price in header
+  "markets": {
+    "coin": "GLD",
+    "exchange": "BTC",
+    "enabled": ["bittrex, cryptopia, ccex"],
+    "cryptopia_id": "1658",
+    "ccex_key" : ""**********",",
+    "default": "bittrex"
+  },
+
+  // richlist/top100 settings
+  "richlist": {
+    "distribution": true,
+    "received": true,
+    "balance": true
+  },
+  // movement page settings
+  // min amount: show transactions greater than this value
+  // low flag: greater than this value flagged yellow
+  // high flag: greater than this value flagged red
+  "movement": {
+    "min_amount": 100,
+    "low_flag": 1000,
+    "high_flag": 10000
+  },
+
+  // twitter, facebook, googleplus
+  "twitter": "@goldcoin",
+  "facebook": "goldcointalk",
+  "googleplus": "yourgooglepluspage",
+
+  //genesis
+  "genesis_tx": "a215e67ba165202f75b6458d22fedd1a3ec4f03449a4c6b2a4b8130bfebd3b15",
+  "genesis_block": "dced3542896ed537cb06f9cb064319adb0da615f64dd8c5e5bad974398f44b24",
+
+  //heavy (enable/disable additional heavy features)
+  "heavy": true,
+
+  //amount of txs to index per address (stores latest n txs)
+  "txcount": 100,
+
+  //show total sent & received on address page (set false if PoS)
+  "show_sent_received": true,
+
+  // how to calculate current coin supply
+  // COINBASE : total sent from coinbase (PoW)
+  // GETINFO : retreive from getinfo api call (PoS)
+  // HEAVY: retreive from heavys getsupply api call
+  // BALANCES : total of all address balances
+  // TXOUTSET : retreive from gettxoutsetinfo api call
+  "supply": "COINBASE",
+
+  // how to acquire network hashrate
+  // getnetworkhashps: uses getnetworkhashps api call, returns in GH/s
+  // netmhashps: uses getmininginfo.netmhashpsm returns in MH/s
+  "nethash": "getnetworkhashps",
+
+  // nethash unitd: sets nethash API return units
+  // valid options: "P" (PH/s), "T" (TH/s), "G" (GH/s), "M" (MH/s), "K" (KH/s)
+  "nethash_units": "G",
+
+  // Address labels
+  // example : ""**********",": {"label": "This is a burn address", "type":"danger", "url":"http://example.com"}
+  // label (required) = test to display
+  // type (optional) = class of label, valid types: default, primary, warning, danger, success
+  // url (optional) = url to link to for more information
+  "labels": {
+    "E8Gvgpc3j6SXo2EW6sLbjutDrD8f4jcppq": {"label": "Testing Crypto Donations", "type":"primary", "url":"http://50.83.11.14:3003"},
+    "ECdTsfG6DoJm1xQ1Qsp89W9yKvsKFMaZb7": {"label": "Testing Crypto Donations2"},
+    "EAQ96h1aTj2ePDtUoDY2kK1A8BBJuYCGss": {"label": "Testing Crypto Donations3"}
+  }
+}
