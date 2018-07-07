@@ -47,7 +47,7 @@
   // wallet settings
   "wallet": {
     "host": "localhost",
-    "port": 8121,
+    "port": 8122,
     "user": "**********",
     "pass": "**********"
   },
@@ -80,10 +80,10 @@
 
   // ensure links on API page are valid
   "api": {
-    "blockindex": 1,
-    "blockhash": "e39be079a4e57af79f63edb2726bdcb401ae520fa5b5328bbeab185b5b3d636e",
-    "txhash": "249851653fa3a0c4e1bf5e38febfd469a5dc54c68350a591fde44c66f03c2742",
-    "address": "DtMxHLAYMR1y1fZP4kQt4yxJPwJ1hgFpZa"
+    "blockindex": 853202,
+    "blockhash": "eaed1d61c90f4cb50ad37dd03d4c0b8b040e68fda2f3723a8cf7ab902084bda6",
+    "txhash": "a215e67ba165202f75b6458d22fedd1a3ec4f03449a4c6b2a4b8130bfebd3b15",
+    "address": "EERPM1N2dqUg5beV2fXfAA5LsnLPCo4E9V"
   },
 
   // market settings
