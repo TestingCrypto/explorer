@@ -72,6 +72,16 @@
     "pools": true
   },
 
+exports.poolslist = {
+        "pool1": {"name": "poolname", "poolurl": "http://pool.url.com"},
+        "pool2": {"name": "poolname", "poolurl": "http://pool.url.com"},
+        "pool3": {"name": "poolname", "poolurl": "http://pool.url.com"},
+        "pool4": {"name": "poolname", "poolurl": "http://pool.url.com"},
+        "pool5": {"name": "poolname", "poolurl": "http://pool.url.com"},
+        "pool6": {"name": "poolname", "poolurl": "https://pool.url.com"},
+        "pool7": {"name": "poolname", "poolurl": "https://pool.url.com"}
+},
+
   // index page (valid options for difficulty are POW, POS or Hybrid)
   "index": {
     "show_hashrate": true,
