@@ -1,4 +1,4 @@
-Iquidus Explorer - 1.6.2.1 (Testing)
+Iquidus Explorer - 1.6.2.2 (Testing)
 ================
 
 An open source block explorer written in node.js.
@@ -8,6 +8,13 @@ An open source block explorer written in node.js.
 *  node.js >= 0.10.28
 *  mongodb 2.6.x
 *  *coind (full sync)
+
+### Mongod fix (*)
+sudo service mongodb stop
+sudo rm /var/lib/mongodb/mongod.lock
+sudo mongod --repair --dbpath /var/lib/mongodb
+sudo mongod --fork --logpath /var/lib/mongodb/mongodb.log --dbpath /var/lib/mongodb 
+sudo service mongodb start
 
 ### Create database
 
