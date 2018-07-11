@@ -114,6 +114,7 @@ app.set('locale', locale);
 app.set('display', settings.display);
 app.set('markets', settings.markets);
 app.set('twitter', settings.twitter);
+app.set('poolslist', settings.poolslist);
 app.set('facebook', settings.youtube);
 app.set('googleplus', settings.googleplus);
 app.set('youtube', settings.youtube);
