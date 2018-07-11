@@ -132,6 +132,21 @@ html
                 a.navbar-link.loading(href='/markets/#{settings.markets.default}') 
                   span.fa.fa-line-chart
                   span.menu-text #{settings.locale.menu_markets}
+            if settings.display.pools == true
+              li#pools.dropdown
+                a(href="#")
+                  span.fa.fa-area-chart
+                  span.menu-text #{settings.locale.menu_pools}
+                    ul.dropdown-menu
+                      li
+                        a(href="http://.com", target='_blank') Mining1
+                      li
+                        a(href="http://.com", target='_blank') Mining2
+                      li
+                        a(href="http://.com", target='_blank') Mining3
+                      li
+                        a(href="http://.com", target='_blank') Mining4
+                  span.menu-text #{settings.locale.menu_markets}
             if settings.display.api == true
               li#info
                 a.navbar-link(href='/info')
