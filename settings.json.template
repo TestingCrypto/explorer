@@ -5,15 +5,15 @@
 */
 {
   // name your instance!
-  "title": "FIRE Explorer",
+  "title": "Coin Explorer",
 
-  "address": "50.83.11.14:3001",
+  "address": "127.0.0.1:3001",
 
   // coin name
-  "coin": "Firecoin",
+  "coin": "Coin",
 
   // coin symbol
-  "symbol": "FIRE",
+  "symbol": "COIN",
 
   // logo
   "logo": "/images/logo.png",
@@ -26,7 +26,7 @@
   //     Cerulean, Cosmo, Cyborg, Darkly, Flatly, Journal, Lumen, Paper,
   //     Readable, Sandstone, Simplex, Slate, Spacelab, Superhero, United, Yeti
   // theme (see /public/themes for available themes)
-  "theme": "United",
+  "theme": "Spacelab",
 
   // port to listen for requests on.
   "port" : 3001,
@@ -35,7 +35,7 @@
   "dbsettings": {
     "user": "iquidus",
     "password": "3xp!0reR",
-    "database": "explorerdb",
+    "database": "coin_explorerdb",
     "address": "localhost",
     "port": 27017
   },
@@ -48,8 +48,8 @@
   "wallet": {
     "host": "localhost",
     "port": 47698,
-    "user": "TestingCrypto@2030",
-    "pass": "TestingApplications@2030"
+    "user": "coin",
+    "pass": "password"
   },
 
   // confirmations
@@ -68,7 +68,8 @@
     "googleplus": false,
     "search": true,
     "movement": true,
-    "network": true
+    "network": true,
+    "pools": true
   },
 
   // index page (valid options for difficulty are POW, POS or Hybrid)
@@ -80,22 +81,22 @@
 
   // ensure links on API page are valid
   "api": {
-    "blockindex": 184250,
-    "blockhash": "f246cbbae7bb6a0cc0bf2c65f69db886f44bce6f9d28f1c094fba7a2ae5886fe",
-    "txhash": "6593a192fd84fb28fb80e3b502664285f155a36f6dde873d8fd05e1c44e29382",
-    "address": "FJhdEYYQzwYm5DwttdG1XUZs5pVjmeGzzW"
+    "blockindex": 0,
+    "blockhash": "",
+    "txhash": "",
+    "address": ""
   },
 
   // market settings
   //supported markets: bittrex, poloniex, yobit, empoex, bleutrade, cryptopia, ccex
   //default market is loaded by default and determines last price in header
   "markets": {
-    "coin": "FIRE",
+    "coin": "COIN",
     "exchange": "BTC",
-    "enabled": ["yobit"],
-    "cryptopia_id": "1658",
+    "enabled": ["coinbase"],
+    "cryptopia_id": "0",
     "ccex_key" : "Get-Your-Own-Key",
-    "default": "yobit"
+    "default": "coinbase"
   },
 
   // richlist/top100 settings
@@ -110,21 +111,22 @@
   // high flag: greater than this value flagged red
   "movement": {
     "min_amount": 1,
-    "low_flag": 10,
-    "high_flag": 100
+    "low_flag": 100,
+    "high_flag": 1000
   },
 
   // twitter, facebook, googleplus
-  "twitter": "FirecoinX15",
+  "twitter": "yourtwitterpage",
   "facebook": "yourfacebookpage",
   "googleplus": "yourgooglepluspage",
+  "youtube": "youryoutubepage"
 
   //genesis
-  "genesis_tx": "c1979ae84522f97066791b8c8d15bd048cc0b3c9bf9ae08ba03b3745377fc213",
-  "genesis_block": "00000e3e8bac8bacace2fbd0f9d8f905ca9dcf2f541cfefcae358351b1ccaba1",
+  "genesis_tx": "",
+  "genesis_block": "",
 
   //heavy (enable/disable additional heavy features)
-  "heavy": false,
+  "heavy": true,
 
   //amount of txs to index per address (stores latest n txs)
   "txcount": 100,
@@ -147,24 +149,15 @@
 
   // nethash unitd: sets nethash API return units
   // valid options: "P" (PH/s), "T" (TH/s), "G" (GH/s), "M" (MH/s), "K" (KH/s)
-  "nethash_units": "K",
+  "nethash_units": "G",
 
   // Address labels
-  // example : "F8pzq2eDheK85pBwyreqiDe7cuFH4rsGLo": {"label": "This is a burn address", "type":"danger", "url":"http://example.com"}
+  // example : "": {"label": "This is a burn address", "type":"danger", "url":"http://example.com"}
   // label (required) = test to display
   // type (optional) = class of label, valid types: default, primary, warning, danger, success
   // url (optional) = url to link to for more information
   "labels": {
-    "FJhdEYYQzwYm5DwttdG1XUZs5pVjmeGzzW": {"label": "Community Development address", "type":"primary", "url":"http://50.83.11.14:8000"},
-    "F8pzq2eDheK85pBwyreqiDe7cuFH4rsGLo": {"label": "18th Nov 2014 12:22:48"},
-    "F651UDZb7rKyJFFRcidtHSfmtxxpAbLUSN": {"label": "18th Nov 2014 14:14:45"},
-    "FHLKQVfVhJeVE4aKPSzxj5pvvwTxcEfrGJ": {"label": "18th Nov 2014 14:14:45"},
-    "FGdaaQqU52EZ3Vs8JWe9cVTikvU6Grue8s": {"label": "20th Feb 2015 11:29:01"},
-    "F5w8wFCjrEfSMhZxntt3tDrfj91KE28ZUZ": {"label": "18th Nov 2014 14:32:47"},
-    "F9kur5AnVEHR9j3SADPMvA8NcGgvXCi6uX": {"label": "Movement"},
-    "FUjEmg3A2D8DRWztHbQYzuua8pBUx4rX5h": {"label": "18th Nov 2014 14:32:47"},
-    "F6F5K93mzf6m91MjzBVo6DJNYmMgkccQPj": {"label": "3rd Dec 2014 14:49:08"},
-    "FTDnueM6THmtkn14sA69sas8viPdizWBkh": {"label": "Movement"},
-    "FAhZw9SXHji3Q5bskUaTV122kSHbNznF4N": {"label": "19th Nov 2014 04:34:40"}
+    "": {"label": "Block Explorer Address", "type":"primary", "url":"http://127.0.0.1:3001"},
+    "": {"label": ""}
   }
 }
