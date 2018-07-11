@@ -29,13 +29,14 @@ Create user with read/write access:
 
 ### Install node modules
 
-    cd coin_explorer && sudo npm install --production
+    cd coin_explorer
+    sudo npm install --production
 
 ### Configure
 
     sudo cp ./settings.json.template ./settings.json
 
-*Make required changes in settings.json*
+*Make required changes in settings.json && update logo/favicon images*
 
 ### Start Explorer //only with full syncd
 
@@ -90,19 +91,19 @@ sync.js (located in scripts/) is used for updating the local databases. This scr
 **crontab**
 
 
-*Example crontab; update index every minute and market data every 2 minutes*
+*Example crontab; update index every minute and market data every * minutes*
 
-*/2 * * * * cd coin_explorer && /usr/bin/nodejs scripts/sync.js index update > /dev/null 2>&1
+*/1 * * * * cd coin_explorer && /usr/bin/nodejs scripts/sync.js index update > /dev/null 2>&1
 
-*/5 * * * * cd coin_explorer && /usr/bin/nodejs scripts/sync.js market > /dev/null 2>&1
+*/2 * * * * cd coin_explorer && /usr/bin/nodejs scripts/sync.js market > /dev/null 2>&1
 
-*/10 * * * * cd coin_explorer && /usr/bin/nodejs scripts/peers.js > /dev/null 2>&1
+*/5 * * * * cd coin_explorer && /usr/bin/nodejs scripts/peers.js > /dev/null 2>&1
 
-*/30 * * * * cd coin_explorer && /usr/bin/nodejs scripts/mapgetdata.js > /dev/null 2>&1
+*/5 * * * * cd coin_explorer && /usr/bin/nodejs scripts/mapgetdata.js > /dev/null 2>&1
 
-@reboot sleep 15; sudo coind -daemon -txindex
+@reboot sleep 15; coind -daemon -txindex
 
-@reboot sleep 60; cd coin_explorer && sudo npm start
+@reboot sleep 60; cd coin_explorer && npm start
 
 
 ### Wallet
