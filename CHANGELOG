@@ -1,4 +1,10 @@
-1.6.2
+1.6.2.2
+* Added Mining Pool Menu
+* Added Numeric formats in stats header
+* Added Market Cap in main layout
+* Network node graphical geomap on 'Network' tab
+
+1.6.2.1
 * added youtube link to layout
 * added node map to network view
 * fixed rounding on total supply
