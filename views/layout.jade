@@ -138,14 +138,9 @@ html
                   span.fa.fa-area-chart
                   span.menu-text #{settings.locale.menu_pools}
                     ul.dropdown-menu
-                      li
-                        a(href="http://.com", target='_blank') Mining1
-                      li
-                        a(href="http://.com", target='_blank') Mining2
-                      li
-                        a(href="http://.com", target='_blank') Mining3
-                      li
-                        a(href="http://.com", target='_blank') Mining4
+                      each pool in settings.poolslist
+                        li
+                          a(href="#{pool.poolurl}", target="_blank") #{pool.name}
                   span.menu-text #{settings.locale.menu_markets}
             if settings.display.api == true
               li#info
