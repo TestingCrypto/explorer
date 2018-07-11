@@ -33,6 +33,12 @@ html
     script(src='//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js')
     script(src='/javascripts/chart.js')
     script.
+     var mktResults = [];
+     function get_mktcap () {
+      var totalcap = mktResults[0]*mktResults[1]*mktResults[2];
+      $("#mktcap").text(numeral(totalcap).format('$0,0.00'));
+      }
+    script.
       $(document).ready(function(){
         $('##{active}').addClass('active');
         function update_stats(){   
@@ -46,6 +52,20 @@ html
             $("#lblBlockcount").text(json.data[0].blockcount + ' blocks');
             $("#lblVersion").text('v1.6.2');
             $("#lblX1").text(' ');
+            var lastsupply = json.data[0].supply;
+            mktResults.push(lastsupply);
+          }});
+          $.ajax({url: 'https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=USD',  success: function(json){
+            $("#btcprice").text(json[0].price_usd);
+            var lastbtcp = json[0].price_usd;
+            mktResults.push(lastbtcp);
+           }});
+          $.ajax({url: 'https://trade.cryptobroker.io/api/v2/tickers/btczbtc.json', success: function(json){
+            $("#btzlast").text(Number(json.ticker.last).toFixed(8));
+            $("#btzhigh").text(Number(json.ticker.high).toFixed(8));
+            var lastcap = json.ticker.last;
+            mktResults.push(lastcap);
+            get_mktcap();
           }});
         }
         $('.block-last-next').tooltip({
@@ -192,6 +212,9 @@ html
                label#difficulty -
         .col-md-2.col-sm-12
           img(src='#{settings.logo}', style='margin-top:-15px;height:128px;')
+          <br><br>
+          .marketcap - Current Market Cap -
+            label#mktcap
         .col-md-2
           .panel.panel-default.hidden-sm.hidden-xs
             .panel-heading
