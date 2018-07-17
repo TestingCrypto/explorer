@@ -35,7 +35,7 @@
   "dbsettings": {
     "user": "**********",
     "password": "**********",
-    "database": "goldcoin_explorerdb",
+    "database": "**********",
     "address": "localhost",
     "port": 27017
   },
@@ -68,7 +68,17 @@
     "googleplus": false,
     "search": true,
     "movement": true,
-    "network": true
+    "network": true,
+    "pools": true
+  },
+
+  "pools": {
+    "pool1": {"name": "coinpool", "poolurl": "https://multipool.coinpool.ml/"},
+    "pool2": {"name": "inetrader", "poolurl": "http://inetrader.com:8221/static/"},
+    "pool3": {"name": "hash-to-coins", "poolurl": "https://hash-to-coins.com/"},
+    "pool4": {"name": "ispace", "poolurl": "http://scrypt.ispace.co.uk/coindetails/?coin=gld&id=9"},
+    "pool5": {"name": "zergpool", "poolurl": "http://zergpool.com/"},
+    "pool6": {"name": "prohashing", "poolurl": "https://prohashing.com/"}
   },
 
   // index page (valid options for difficulty are POW, POS or Hybrid)
@@ -92,9 +102,9 @@
   "markets": {
     "coin": "GLD",
     "exchange": "BTC",
-    "enabled": ["bittrex, cryptopia, ccex"],
+    "enabled": ["bittrex", "cryptopia", "ccex"],
     "cryptopia_id": "1658",
-    "ccex_key" : ""**********",",
+    "ccex_key" : "**********",
     "default": "bittrex"
   },
 
@@ -115,7 +125,7 @@
   },
 
   // twitter, facebook, googleplus
-  "twitter": "@goldcoin",
+  "twitter": "goldcoin",
   "facebook": "goldcointalk",
   "googleplus": "yourgooglepluspage",
 
@@ -150,13 +160,13 @@
   "nethash_units": "G",
 
   // Address labels
-  // example : ""**********",": {"label": "This is a burn address", "type":"danger", "url":"http://example.com"}
+  // example : "": {"label": "This is a burn address", "type":"danger", "url":"http://example.com"}
   // label (required) = test to display
   // type (optional) = class of label, valid types: default, primary, warning, danger, success
   // url (optional) = url to link to for more information
   "labels": {
-    "E8Gvgpc3j6SXo2EW6sLbjutDrD8f4jcppq": {"label": "Testing Crypto Donations", "type":"primary", "url":"http://50.83.11.14:3003"},
-    "ECdTsfG6DoJm1xQ1Qsp89W9yKvsKFMaZb7": {"label": "Testing Crypto Donations2"},
-    "EAQ96h1aTj2ePDtUoDY2kK1A8BBJuYCGss": {"label": "Testing Crypto Donations3"}
+    "E8Gvgpc3j6SXo2EW6sLbjutDrD8f4jcppq": {"label": "Testing Crypto"},
+    "ECdTsfG6DoJm1xQ1Qsp89W9yKvsKFMaZb7": {"label": "Testing Crypto B.E. Donations", "type":"primary", "url":"http://50.83.11.14:3003"},
+    "EAQ96h1aTj2ePDtUoDY2kK1A8BBJuYCGss": {"label": "Testing Crypto tip address"}
   }
 }
