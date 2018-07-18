@@ -154,11 +154,12 @@ exports.poolslist = {
 
   // how to acquire network hashrate
   // getnetworkhashps: uses getnetworkhashps api call, returns in GH/s
-  // netmhashps: uses getmininginfo.netmhashpsm returns in MH/s
+  // netmhashps: uses getmininginfo.netmhashpsm returns in MH/s, 
+  //  if POS is set and returns getmininginfo.netmhashpsm=0 - uses getmininginfo.netstakeweight
   "nethash": "getnetworkhashps",
 
   // nethash unitd: sets nethash API return units
-  // valid options: "P" (PH/s), "T" (TH/s), "G" (GH/s), "M" (MH/s), "K" (KH/s)
+  // valid options: "P" (PH/s), "T" (TH/s), "G" (GH/s), "M" (MH/s), "K" (KH/s), POS - (Weight)
   "nethash_units": "G",
 
   // Address labels
