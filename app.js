@@ -115,6 +115,8 @@ app.set('display', settings.display);
 app.set('markets', settings.markets);
 app.set('twitter', settings.twitter);
 app.set('poolslist', settings.poolslist);
+app.set('bitcointalk',settings.bitcointalk);
+app.set('telegram', settings.telegram);
 app.set('facebook', settings.youtube);
 app.set('googleplus', settings.googleplus);
 app.set('youtube', settings.youtube);
@@ -126,6 +128,7 @@ app.set('nethash', settings.nethash);
 app.set('nethash_units', settings.nethash_units);
 app.set('show_sent_received', settings.show_sent_received);
 app.set('logo', settings.logo);
+app.set('logoref',settings.logoref);
 app.set('theme', settings.theme);
 app.set('labels', settings.labels);
 
