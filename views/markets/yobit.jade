@@ -18,11 +18,11 @@ block market_view
               th.hidden-xs #{settings.locale.mkt_last}
           tbody
             tr
-              td #{marketdata.data.summary.high}
-              td #{marketdata.data.summary.low}
-              td.hidden-xs #{marketdata.data.summary.buy}
-              td.hidden-xs #{marketdata.data.summary.sell}
-              td.hidden-xs #{marketdata.data.summary.last}
+              td #{marketdata.data.summary.high.toFixed(8)}
+              td #{marketdata.data.summary.low.toFixed(8)}
+              td.hidden-xs #{marketdata.data.summary.buy.toFixed(8)}
+              td.hidden-xs #{marketdata.data.summary.sell.toFixed(8)}
+              td.hidden-xs #{marketdata.data.summary.last.toFixed(8)}
   .row
     .col-md-6.col-xs-12
       .panel.panel-default
