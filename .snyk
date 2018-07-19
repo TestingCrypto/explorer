@@ -14,13 +14,21 @@ patch:
         patched: '2018-07-18T23:46:02.436Z'
     - bitcoin-node-api > express > send > mime:
         patched: '2018-07-18T23:46:02.436Z'
+    - bitcoin-node-api > express > connect > send > mime:
+        patched: '2018-07-19T00:44:36.150Z'
+    - bitcoin-node-api > express > send > mime:
+        patched: '2018-07-19T00:44:36.150Z'
   'npm:qs:20140806-1':
     - bitcoin-node-api > express > connect > qs:
         patched: '2018-07-18T23:39:01.840Z'
     - bitcoin-node-api > express > connect > qs:
         patched: '2018-07-18T23:46:02.436Z'
+    - bitcoin-node-api > express > connect > qs:
+        patched: '2018-07-19T00:44:36.150Z'
   'npm:uglify-js:20151024':
     - jade > transformers > uglify-js:
         patched: '2018-07-18T23:39:01.840Z'
     - jade > transformers > uglify-js:
         patched: '2018-07-18T23:46:02.436Z'
+    - jade > transformers > uglify-js:
+        patched: '2018-07-19T00:44:36.150Z'
