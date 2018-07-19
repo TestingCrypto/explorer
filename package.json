@@ -10,9 +10,6 @@
   "dependencies": {
     "bitcoin-node-api": "0.1.0",
     "body-parser": "~1.18.2",
-    "cookie-parser": "~1.0.1",
-    "debug": "~0.7.4",
-    "express": "~4.2.0",
     "jade": "^1.11.0",
     "jsonminify": "0.2.3",
     "markdown-js": "0.0.3",
