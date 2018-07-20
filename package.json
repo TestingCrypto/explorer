@@ -22,7 +22,7 @@
     "mongoose": "4.11.14",
     "morgan": "~1.0.0",
     "qr-image": "~2.0.0",
-    "request": "2.82.0",
+    "request": "2.84.0",
     "static-favicon": "~1.0.0",
     "snyk": "^1.89.0"
   },
