@@ -1,0 +1,110 @@
+{
+  "title": "BurgerHash Explorer",
+
+  "address": "192.168.0.20:3008",
+
+  "coin": "BurgerHash",
+
+  "symbol": "BURGER",
+
+  "logo": "/images/logo.png",
+
+  "favicon": "public/favicon.ico",
+
+  "theme": "Yeti",
+
+  "port" : 3008,
+
+  "dbsettings": {
+    "user": "",
+    "password": "",
+    "database": "",
+    "address": "localhost",
+    "port": 27017
+  },
+
+  "update_timeout": 10,
+  "check_timeout": 250,
+
+  "wallet": {
+    "host": "localhost",
+    "port": 52000,
+    "user": "",
+    "pass": ""
+  },
+
+  "confirmations": 120,
+
+  "locale": "locale/en.json",
+
+  "display": {
+    "api": false,
+    "markets": false,
+    "richlist": true,
+    "telegram":false,
+    "bitcointalk":false,
+    "twitter": false,
+    "facebook": false,
+    "googleplus": false,
+    "search": true,
+    "movement": true,
+    "network": true,
+    "pools": false
+  },
+
+  "index": {
+    "show_hashrate": true,
+    "difficulty": "POW",
+    "last_txs": 100
+  },
+
+  "api": {
+    "blockindex": 75928,
+    "blockhash": "a9b170b402d73b7b8861da91d016a1f0fe836645ba2eb27dc4e6982d702e48ca",
+    "txhash": "409ff7c43da32abed5c13ad0ce682602be2747f19bd32daaea12a3c8f5d82849",
+    "address": "BcQkRhr2v6LdxungXoYmd7qjw1kUaxGAwc"
+  },
+
+  "markets": {
+    "coin": "BURGER",
+    "exchange": "BTC",
+    "enabled": ["yobit"],
+    "cryptopia_id": "1658",
+    "ccex_key" : "Get-Your-Own-Key",
+    "default": "yobit"
+  },
+
+  "richlist": {
+    "distribution": true,
+    "received": true,
+    "balance": true
+  },
+  "movement": {
+    "min_amount": 10,
+    "low_flag": 100,
+    "high_flag": 1000
+  },
+
+  "twitter": "twitter",
+  "facebook": "facebook",
+  "googleplus": "googleplus",
+
+  "genesis_tx": "319b9a155f5a5b425241aed154add2b413b940da743cf04f452653cd2dc28ebf",
+  "genesis_block": "f13bab49cfe21fb00e7fd4ce238dedfb86f415ebd31fd48aec7ee17cff445805",
+
+  "heavy": true,
+
+  "txcount": 100,
+
+  "show_sent_received": true,
+
+  "supply": "COINBASE",
+
+  "nethash": "getnetworkhashps",
+
+  "nethash_units": "M",
+
+  "labels": {
+    "BejjQ63ArBGEXX4ExN6aQ91JbcG3sxMSVx": {"label": "Community Donations", "type":"primary", "url":"https://testingcrypto.space"}
+  }
+}
